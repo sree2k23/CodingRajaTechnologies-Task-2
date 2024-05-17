@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CodingRajaTechnologies1.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Music Player</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Playlists</h3>
+                <ul id="playlist" class="list-group">
+                    <!-- Playlists will be dynamically added here -->
+                </ul>
+                <input type="text" id="newPlaylistName" class="form-control mt-3" placeholder="New Playlist Name">
+                <button class="btn btn-primary mt-2" onclick="addPlaylist()">Add Playlist</button>
+            </div>
+
+            <div class="col-md-8">
+                <h3>Music Library</h3>
+                <div id="musicLibrary" class="row">
+                    <!-- Music tracks will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center">
+                    <button class="btn btn-secondary" onclick="previousTrack()">Previous</button>
+                    <button class="btn btn-secondary" onclick="playPauseTrack()">Play/Pause</button>
+                    <button class="btn btn-secondary" onclick="nextTrack()">Next</button>
+                    <button class="btn btn-secondary" onclick="toggleShuffle()">Shuffle</button>
+                    <button class="btn btn-secondary" onclick="toggleRepeat()">Repeat</button>
+                </div>
+                <div class="progress mt-3">
+                    <div class="progress-bar" id="progressBar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <input type="range" id="volumeControl" class="form-control-range mt-3" min="0" max="1" step="0.01" onchange="setVolume(this.value)">
+            </div>
+        </div>
+    </div>
+
+    <audio id="audioPlayer"></audio>
+
+    <script src="CodingRajaTechnologies1.js"></script>
+</body>
+
+</html>
